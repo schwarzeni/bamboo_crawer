@@ -1,0 +1,16 @@
+{% extends "./components/base.html" %}
+
+{% block title %}
+<title>结果</title>
+{% endblock %}
+{% block content %}
+<div class="alert alert-success" role="alert">
+    关键词：
+    {% for str in key_word_array %}
+        <span class="label label-info">{{ str }}</span>
+    {% endfor %}
+    共 {{ total_count }} 个结果，分为 {{ total_idx }} 页，当前 {{ current_idx }} 页
+</div>
+{% include "./components/show_list.html" with bamboos_list=bamboos_list pagination_info=pagination_info%}
+{% include "./components/pagination_search.html" with pagination_info=pagination_info %}
+{% endblock %}

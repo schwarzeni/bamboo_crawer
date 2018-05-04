@@ -1,0 +1,10 @@
+{% extends "./components/base.html" %}
+
+{% block title %}
+<title>欢迎</title>
+{% endblock %}
+{% block content %}
+<div class="alert alert-success" role="alert">总共 <span class="label label-info">{{ total_count }}</span> 条数据</div>
+{% include "./components/show_list.html" with bamboos_list=bamboos_list %}
+{% include "./components/pagination_index.html" with pagination_info=pagination_info %}
+{% endblock %}

@@ -1,0 +1,14 @@
+<div>
+    <div>
+        {% if bamboos_list %}
+        <div class="list-group">
+            {% for bamboo in bamboos_list %}
+            <a href="{% url 'article'  bamboo.id %}" class="list-group-item">
+                <h4 class="list-group-item-heading">{{ bamboo.title }}</h4>
+                <p class="list-group-item-text">{{ bamboo.publish_time }}</p>
+            </a>
+            {% endfor %}
+        </div>
+        {% endif %}
+    </div>
+</div>
