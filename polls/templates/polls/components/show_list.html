@@ -1,13 +1,14 @@
-<!doctype html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport"
-          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>$Title$</title>
-</head>
-<body>
-$END$
-</body>
-</html>
+<div>
+    <div>
+        {% if bamboos_list %}
+        <div class="list-group">
+            {% for bamboo in bamboos_list %}
+            <a href="{% url 'article'  bamboo.id %}" class="list-group-item">
+                <h4 class="list-group-item-heading">{{ bamboo.title }}</h4>
+                <p class="list-group-item-text">{{ bamboo.publish_time }}</p>
+            </a>
+            {% endfor %}
+        </div>
+        {% endif %}
+    </div>
+</div>

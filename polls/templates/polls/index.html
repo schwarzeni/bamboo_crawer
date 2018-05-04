@@ -1,13 +1,10 @@
-<!doctype html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport"
-          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>$Title$</title>
-</head>
-<body>
-$END$
-</body>
-</html>
+{% extends "./components/base.html" %}
+
+{% block title %}
+<title>欢迎</title>
+{% endblock %}
+{% block content %}
+<div class="alert alert-success" role="alert">总共 <span class="label label-info">{{ total_count }}</span> 条数据</div>
+{% include "./components/show_list.html" with bamboos_list=bamboos_list %}
+{% include "./components/pagination_index.html" with pagination_info=pagination_info %}
+{% endblock %}
